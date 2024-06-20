@@ -2,6 +2,9 @@ from flask import Flask, request, jsonify
 import mysql.connector
 from datetime import datetime
 import pandas as pd
+
+app = Flask(__name__)
+
 @app.route('/sms/predict_spam', methods=['POST'])
 def predict_spam_sms():
     text = request.form['text']
